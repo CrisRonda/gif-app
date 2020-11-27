@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test on GiftGridItem should render GiftGridItem 1`] = `
+<figure
+  className="card animate__animated animate__fadeIn"
+>
+  <img
+    alt="My title.. "
+    src="https://localhost/"
+  />
+  <figcaption>
+    My title.. 
+  </figcaption>
+</figure>
+`;
