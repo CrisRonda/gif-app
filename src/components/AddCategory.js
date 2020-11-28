@@ -18,9 +18,9 @@ const AddCategory = ({ setParams }) => {
     }
   }, []);
 
-  useEffect(() => {
-    if (inputValue) setParams({ category: inputValue, limit });
-  }, [inputValue, limit, setParams]);
+  // useEffect(() => {
+  //   if (inputValue) setParams({ category: inputValue, limit });
+  // }, [inputValue, limit, setParams]);
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
@@ -29,7 +29,7 @@ const AddCategory = ({ setParams }) => {
     e.preventDefault();
 
     if (inputValue.trim().length >= 2) {
-      setParams([inputValue]);
+      setParams({ category: inputValue, limit });
       setInputValue("");
     }
   };
@@ -40,12 +40,12 @@ const AddCategory = ({ setParams }) => {
       style={{ display: "flex", justifyContent: "center" }}
     >
       <Input
+        id="input"
         ref={ref}
         label="Search"
         style={{ maxWidth: 700, width: "80%" }}
         placeholder="Search your Gift"
         bottomHelpText="ex: Shaman King"
-        // className="rainbow-m-vertical_x-large rainbow-p-horizontal_medium rainbow-m_auto"
         value={inputValue}
         onChange={handleInputChange}
       />

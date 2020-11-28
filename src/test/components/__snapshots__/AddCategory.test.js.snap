@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on AddCategory should show componente 1`] = `
+<form
+  onSubmit={[Function]}
+  style={
+    Object {
+      "display": "flex",
+      "justifyContent": "center",
+    }
+  }
+>
+  <_class
+    bottomHelpText="ex: Shaman King"
+    id="input"
+    label="Search"
+    onChange={[Function]}
+    placeholder="Search your Gift"
+    style={
+      Object {
+        "maxWidth": 700,
+        "width": "80%",
+      }
+    }
+    value=""
+  />
+  <_class
+    label="By"
+    onChange={[Function]}
+    options={
+      Array [
+        Object {
+          "label": "10",
+          "value": 10,
+        },
+        Object {
+          "label": "20",
+          "value": 20,
+        },
+        Object {
+          "label": "30",
+          "value": 30,
+        },
+      ]
+    }
+    style={
+      Object {
+        "marginLeft": 8,
+        "maxWidth": 356,
+      }
+    }
+    value={10}
+  />
+</form>
+`;

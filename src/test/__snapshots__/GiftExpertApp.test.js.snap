@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on GiftExpertApp should render compontent 1`] = `
+<Fragment>
+  <h2>
+    GiftExpertApp
+  </h2>
+  <AddCategory
+    setParams={[Function]}
+  />
+  <ol>
+    <GifGrid
+      category="Rainbow"
+      limit={10}
+    />
+  </ol>
+</Fragment>
+`;
