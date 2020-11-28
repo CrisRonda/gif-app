@@ -1,38 +1,68 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from "react";
+import PropTypes from "prop-types";
+import { Input, Select } from "react-rainbow-components";
 
-const AddCategory = ({ setCategories }) => {
+const options = [
+  { value: 10, label: "10" },
+  { value: 20, label: "20" },
+  { value: 30, label: "30" },
+];
 
-  const [inputValue, setInputValue] = useState('');
+const AddCategory = ({ setParams }) => {
+  const [inputValue, setInputValue] = useState("");
+  const [limit, setLimit] = useState(10);
+  const ref = useRef();
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.focus();
+    }
+  }, []);
 
-  const handleInputChange = ( e ) => {
-    setInputValue(e.target.value); 
-  }
+  useEffect(() => {
+    if (inputValue) setParams({ category: inputValue, limit });
+  }, [inputValue, limit, setParams]);
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (inputValue.trim().length >= 2) {
-      setCategories( categories => [inputValue, ...categories]);
-      setInputValue('');
+      setParams([inputValue]);
+      setInputValue("");
     }
-  }
+  };
 
   return (
-    <form onSubmit={ handleSubmit }>
-      <input 
-        type="text"
-        value={ inputValue } 
-        onChange={ handleInputChange }
+    <form
+      onSubmit={handleSubmit}
+      style={{ display: "flex", justifyContent: "center" }}
+    >
+      <Input
+        ref={ref}
+        label="Search"
+        style={{ maxWidth: 700, width: "80%" }}
+        placeholder="Search your Gift"
+        bottomHelpText="ex: Shaman King"
+        // className="rainbow-m-vertical_x-large rainbow-p-horizontal_medium rainbow-m_auto"
+        value={inputValue}
+        onChange={handleInputChange}
+      />
+      <Select
+        label="By"
+        value={limit}
+        onChange={({ target: { value } }) => setLimit(value)}
+        options={options}
+        style={{ maxWidth: 356, marginLeft: 8 }}
+        // className="rainbow-m-vertical_x-large rainbow-p-horizontal_medium rainbow-m_auto"
       />
     </form>
-  )
-}
+  );
+};
 
 AddCategory.propTypes = {
-  setCategories: PropTypes.func.isRequired
-}
+  setParams: PropTypes.func.isRequired,
+};
 
 export default AddCategory;
-
-

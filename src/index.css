@@ -3,9 +3,8 @@
 }
 
 body {
-  padding: 60px;
-  background-color: #21232a;
-  color: white;
+  padding: 64px;
+  color: rgb(82, 79, 79);
 }
 
 input {
@@ -21,12 +20,12 @@ input {
 }
 
 .card {
-  background-color: #29232a;
-  border: 1px solid gray;
-  border-radius: 5px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   margin: 10px auto;
   overflow: hidden;
+  transition: all ease 0.2s;
+}
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card figcaption {
