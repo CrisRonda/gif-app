@@ -1,6 +1,6 @@
 # React Gifs App
 
-This project was fork from [Juan Carlos Guaña Repo]().
+This project was fork from [Juan Carlos Guaña Repo](https://github.com/JuanGuana/gif-app).
 And deploy on [GitHub Pages](https://crisronda.github.io/gif-app/)
 
 # Content 
