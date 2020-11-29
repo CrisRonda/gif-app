@@ -22,7 +22,7 @@ const Footer = () => (
 const GiftGridItem = ({ title, url, small, medium, hideImage }) => {
   let style = { margin: "24px", maxWidth: 600 };
   if (small) {
-    style = { margin: "24px", maxWidth: 300 };
+    style = { margin: "24px", maxWidth: 100 };
   }
   if (medium) {
     style = { margin: "24px", maxWidth: 450 };
@@ -30,9 +30,13 @@ const GiftGridItem = ({ title, url, small, medium, hideImage }) => {
   return (
     <Card
       title={title}
-      style={style}
+      style={{
+        // ...style,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+      }}
       className={"card animate__animated animate__fadeIn"}
-      footer={<Footer />}
     >
       <figure>
         {!hideImage && (
@@ -51,7 +55,7 @@ GiftGridItem.propTypes = {
   hideImage: PropTypes.bool,
 };
 GiftGridItem.defaultProps = {
-  small: true,
+  small: false,
   medium: false,
   hideImage: false,
 };

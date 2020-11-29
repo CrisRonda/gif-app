@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
-import { Input, Select } from "react-rainbow-components";
+import { Button, Input, Select } from "react-rainbow-components";
 
 const options = [
   { value: 10, label: "10" },
@@ -30,14 +30,19 @@ const AddCategory = ({ setParams }) => {
 
     if (inputValue.trim().length >= 2) {
       setParams({ category: inputValue, limit });
-      setInputValue("");
+      // setInputValue("");
     }
   };
 
   return (
     <form
       onSubmit={handleSubmit}
-      style={{ display: "flex", justifyContent: "center" }}
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        alignItems: "flex-end",
+      }}
     >
       <Input
         id="input"
@@ -45,7 +50,6 @@ const AddCategory = ({ setParams }) => {
         label="Search"
         style={{ maxWidth: 700, width: "80%" }}
         placeholder="Search your Gift"
-        bottomHelpText="ex: Shaman King"
         value={inputValue}
         onChange={handleInputChange}
       />
@@ -54,8 +58,14 @@ const AddCategory = ({ setParams }) => {
         value={limit}
         onChange={({ target: { value } }) => setLimit(value)}
         options={options}
-        style={{ maxWidth: 356, marginLeft: 8 }}
-        // className="rainbow-m-vertical_x-large rainbow-p-horizontal_medium rainbow-m_auto"
+        style={{ maxWidth: 100, margin: "0 12px " }}
+      />
+      <Button
+        style={{ height: 38 }}
+        label="Search"
+        onClick={handleSubmit}
+        variant="brand"
+        className="rainbow-m-around_medium"
       />
     </form>
   );

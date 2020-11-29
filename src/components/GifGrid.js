@@ -16,9 +16,11 @@ const GifGrid = ({ category, limit }) => {
         <p className="animate__animated animate__flash">Loading...</p>
       )}
       <main className="card-grid">
-        {images.map((img) => (
-          <GiftGridItem key={img.id} {...img} />
-        ))}
+        {images.length ? (
+          images.map((img) => <GiftGridItem key={img.id} {...img} />)
+        ) : (
+          <h4>No results </h4>
+        )}
       </main>
     </>
   );

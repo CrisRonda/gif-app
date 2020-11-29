@@ -14,6 +14,10 @@ exports[`Test on GifGrid should render compontent 1`] = `
   </p>
   <main
     className="card-grid"
-  />
+  >
+    <h4>
+      No results 
+    </h4>
+  </main>
 </Fragment>
 `;

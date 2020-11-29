@@ -5,13 +5,14 @@ exports[`Test on AddCategory should show componente 1`] = `
   onSubmit={[Function]}
   style={
     Object {
+      "alignItems": "flex-end",
       "display": "flex",
+      "flexWrap": "wrap",
       "justifyContent": "center",
     }
   }
 >
   <_class
-    bottomHelpText="ex: Shaman King"
     id="input"
     label="Search"
     onChange={[Function]}
@@ -45,11 +46,29 @@ exports[`Test on AddCategory should show componente 1`] = `
     }
     style={
       Object {
-        "marginLeft": 8,
-        "maxWidth": 356,
+        "margin": "0 12px ",
+        "maxWidth": 100,
       }
     }
     value={10}
+  />
+  <Button
+    className="rainbow-m-around_medium"
+    disabled={false}
+    isLoading={false}
+    label="Search"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    shaded={false}
+    style={
+      Object {
+        "height": 38,
+      }
+    }
+    type="button"
+    variant="brand"
   />
 </form>
 `;

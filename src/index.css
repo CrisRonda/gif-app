@@ -23,6 +23,8 @@ input {
   margin: 24px auto;
   overflow: hidden;
   transition: all ease 0.2s;
+  width: 100%;
+  max-width: 250px;
 }
 .card:hover {
   transform: scale(1.05);
@@ -31,8 +33,9 @@ input {
 .card figcaption {
   padding: 25px;
   text-align: center;
+  font-size: 1rem;
 }
-/* @media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .card {
     max-width: 600px;
   }
@@ -46,7 +49,13 @@ input {
   .card {
     max-width: 300px;
   }
-} */
+  .card figcaption {
+    padding: 4px;
+  }
+  body {
+    padding: 16px;
+  }
+}
 .card img {
   display: block;
   margin: 0 auto;

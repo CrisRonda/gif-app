@@ -7,7 +7,7 @@ const GiftExpertApp = ({ initialState }) => {
   const [params, setParams] = useState(initialState);
   return (
     <>
-      <h2>GiftExpertApp</h2>
+      <h2>GiftExpertApp With Test and Storybook</h2>
       <AddCategory setParams={setParams} />
       <ol>
         <GifGrid category={params.category} limit={params.limit} />
