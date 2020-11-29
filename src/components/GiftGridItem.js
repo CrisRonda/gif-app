@@ -20,12 +20,12 @@ const Footer = () => (
 );
 
 const GiftGridItem = ({ title, url, small, medium, hideImage }) => {
-  let style = { margin: "24px 0 ", maxWidth: 600 };
+  let style = { margin: "24px", maxWidth: 600 };
   if (small) {
-    style = { margin: "24px 0 ", maxWidth: 300 };
+    style = { margin: "24px", maxWidth: 300 };
   }
   if (medium) {
-    style = { margin: "24px 0 ", maxWidth: 450 };
+    style = { margin: "24px", maxWidth: 450 };
   }
   return (
     <Card
@@ -51,7 +51,7 @@ GiftGridItem.propTypes = {
   hideImage: PropTypes.bool,
 };
 GiftGridItem.defaultProps = {
-  small: false,
+  small: true,
   medium: false,
   hideImage: false,
 };
