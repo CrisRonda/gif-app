@@ -7,25 +7,37 @@ import {
   faAirFreshener as faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 
-const GiftGridItem = ({ title, url }) => {
+const Footer = () => (
+  <div className="rainbow-align-content_space-between">
+    <div className="rainbow-flex">
+      <ButtonIcon
+        icon={<FontAwesomeIcon icon={faHeart} />}
+        className="rainbow-m-right_xx-small"
+      />
+      <ButtonIcon icon={<FontAwesomeIcon icon={faShareAlt} />} />
+    </div>
+  </div>
+);
+
+const GiftGridItem = ({ title, url, small, medium, hideImage }) => {
+  let style = { margin: "24px 0 ", maxWidth: 600 };
+  if (small) {
+    style = { margin: "24px 0 ", maxWidth: 300 };
+  }
+  if (medium) {
+    style = { margin: "24px 0 ", maxWidth: 450 };
+  }
   return (
     <Card
       title={title}
-      className="card animate__animated animate__fadeIn"
-      footer={
-        <div className="rainbow-align-content_space-between">
-          <div className="rainbow-flex">
-            <ButtonIcon
-              icon={<FontAwesomeIcon icon={faHeart} />}
-              className="rainbow-m-right_xx-small"
-            />
-            <ButtonIcon icon={<FontAwesomeIcon icon={faShareAlt} />} />
-          </div>
-        </div>
-      }
+      style={style}
+      className={"card animate__animated animate__fadeIn"}
+      footer={<Footer />}
     >
       <figure>
-        <img style={{ flex: 1 }} src={url} alt={title} />
+        {!hideImage && (
+          <img style={{ flex: 1, width: "100%" }} src={url} alt={title} />
+        )}
         <figcaption>{title}</figcaption>
       </figure>
     </Card>
@@ -34,5 +46,14 @@ const GiftGridItem = ({ title, url }) => {
 GiftGridItem.propTypes = {
   title: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
+  small: PropTypes.bool,
+  medium: PropTypes.bool,
+  hideImage: PropTypes.bool,
 };
+GiftGridItem.defaultProps = {
+  small: false,
+  medium: false,
+  hideImage: false,
+};
+export { GiftGridItem, Footer };
 export default GiftGridItem;
